@@ -7,6 +7,7 @@ import CategoryListPage from '../../features/category/pages/CategoryListPage';
 import ModalContainer from '../components/containers/ModalContainer';
 import NotificationContainer from '../components/containers/NotificationContainer';
 import RequestSpinnerContainer from '../components/containers/RequestSpinnerContainer';
+import BrandListPage from '../../features/brand/pages/BrandListPage';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Navigation />
         <Container className='mt-2 page-container'>
           <Route path='/category' component={CategoryListPage} />
+          <Route path='/brand' component={BrandListPage} />
         </Container>
       </Router>
     </div>
