@@ -8,6 +8,9 @@ import ModalContainer from '../components/containers/ModalContainer';
 import NotificationContainer from '../components/containers/NotificationContainer';
 import RequestSpinnerContainer from '../components/containers/RequestSpinnerContainer';
 import BrandListPage from '../../features/brand/pages/BrandListPage';
+import MaterialFormPage from '../../features/material/pages/MaterialFormPage';
+import MaterialListPage from '../../features/material/pages/MaterialListPage';
+import MaterialDetailPage from '../../features/material/pages/MaterialDetailPage';
 
 function App() {
 
@@ -22,6 +25,12 @@ function App() {
         <Container className='mt-2 page-container'>
           <Route path='/category' component={CategoryListPage} />
           <Route path='/brand' component={BrandListPage} />
+
+          {/* Material */}
+          <Route path='/material' component={MaterialListPage} exact />
+          <Route path='/material/:id' component={MaterialDetailPage} exact />
+          <Route path='/material/new' component={MaterialFormPage} exact />
+          <Route path='/material/edit/:id' component={MaterialFormPage} exact />
         </Container>
       </Router>
     </div>

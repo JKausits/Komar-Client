@@ -1,22 +1,21 @@
 import { useField } from 'formik'
 import React from 'react'
 import { FormControlProps } from 'react-bootstrap'
-import Input from '../Input';
+import PercentageInput from '../PercentageInput';
 
 interface IProps extends FormControlProps {
     name: string;
     label?: string;
-    placeholder?: string;
 }
 
-const FormikInput: React.FC<IProps> = ({ label, ...props }) => {
+const FormikPercentageInput: React.FC<IProps> = ({ label, ...props }) => {
     //#region State
     const [field, meta] = useField(props);
     //#endregion
 
     return (
-        <Input label={label} {...field} {...props} error={meta.touched ? meta.error : ''} />
+        <PercentageInput label={label} {...field} {...props} error={meta.touched ? meta.error : ''} />
     )
 }
 
-export default FormikInput
+export default FormikPercentageInput

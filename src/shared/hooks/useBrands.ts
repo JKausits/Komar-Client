@@ -31,14 +31,14 @@ const useBrands = () => {
     const handleCreateBrand = useCallback(
         async (dto: BrandFormDto) => {
             const action = () => BrandRequests.createBrand(dto);
-            const Brand = await requestStore.runRequest(
+            const brand = await requestStore.runRequest(
                 action,
                 "Creating Brand"
             );
 
-            addBrand(Brand);
+            addBrand(brand);
             notificationStore.sendSuccessNotification("Brand Created");
-            return Brand;
+            return brand;
         },
         [addBrand, requestStore, notificationStore]
     );
